@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+html, body, section {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--section-bg);
+    color: var(--section-fg);
+    scroll-snap-align: start;
+    position: relative;
+}
+section .content {
+    max-width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+section .column-left {
+    padding-right: 10px;
+}
+section .column-left img {
+    height: 128px;
+}
+section .column-right {
+    padding-left: 20px;
+}
+
+div.please-scroll, div.back-to-top {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: medium;
+    cursor: pointer;
+}
+.please-scroll .arrow {
+    font-size: xx-large;
+    margin-top: -10px;
+    animation: please-scroll 1.5s ease 0s infinite;
+}
+
+.back-to-top .arrow {
+    font-size: xx-large;
+    margin-bottom: -10px;
+    animation: back-to-top 1.5s ease 0s infinite;
+}
+
+@keyframes please-scroll {
+    0% {
+        transform: scaleY(1) translateY(0);
+    }
+    50% {
+        transform: scaleY(1.2) translateY(5px);
+    }
+    100% {
+        transform: scaleY(1) translateY(0);
+    }
+}
+@keyframes back-to-top {
+    0% {
+        transform: scaleY(1) translateY(0);
+    }
+    50% {
+        transform: scaleY(1.2) translateY(-5px);
+    }
+    100% {
+        transform: scaleY(1) translateY(0);
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --link-color: rgb(0, 195, 255);
+    scroll-snap-type: y mandatory;
+}
+
+h1 {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: 2em;
+}
+
+a {
+    color: var(--link-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: .2s;
+    border-bottom: 0px solid var(--section-bg);
+}
+a:hover {
+    border-bottom: 2px solid var(--link-color);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+section#hello {
+    --section-bg: black;
+    --section-fg: white;
+}
+
+section#mmm {
+    --section-bg: #353D49;
+    --section-fg: white;
+    --link-color: #F15923;
+}
+section#harknology {
+    --section-bg: #15A34A;
+    --section-fg: white;
+    --link-color: #8AD1A4;
+}
+section#valapkg {
+    --section-bg: #F5E5D0;
+    --section-fg: black;
+    --link-color: #a56de2;
+}
+section#contact {
+    --section-bg: black;
+    --section-fg: white;
+    text-align: center;
+}
+
+
+gh-language-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.language {
+    height: 10px;
+}
+.language-TypeScript {
+    background-color: #2A7389
+}
+.language-CSS {
+    background-color: #563D7C;
+}
+.language-JavaScript {
+    background-color: #F1E059;
+}
+.language-Java {
+    background-color: #b07219;
+}
+.language-Kotlin {
+    background-color: #A97BFF;
+}
+.language-Shell {
+    background-color: #89e051;
+}
+.language-Makefile {
+    background-color: #427819;
+}
+.language-Vala {
+    background-color: #a56de2;
+}
+.language-C {
+    background-color: #555555;
+}
+.language-Meson {
+    background-color: #007800;
+}
+
+@media screen and (max-width: 720px) {
+    section .content {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    section {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    div.please-scroll {
+        position: unset;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    section .column-left img {
+        width: 70%;
+        height: unset;
+        text-align: center;
+        display: block;
+    }
+    section .column-left {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+img {
+    vertical-align: middle;
+}
+
+section#contact img {
+    padding-right: 5px;
+}
