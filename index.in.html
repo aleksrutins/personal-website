@@ -1,0 +1,91 @@
+include(`defs.m4')
+pagestart
+page_section(hello, `<img src="profile.png">',
+    section_heading(
+        Hello.<br>
+        I'm <b>Aleks Rūtiņš</b>.
+    )
+    section_content(``
+        I am a student who likes to code.<br>
+        I have experience with <b>C</b>, <b>JavaScript</b>, <b>TypeScript</b>, <b>HTML</b>, <b>CSS</b>,
+        <b>Go</b>, <b>Rust</b>,
+        <b>Java</b>, <b>Kotlin</b>, <b>C++</b>, and other programming languages.<br>
+        Below are a few of my endeavours.<br>
+        You can see others <a href="https://github.com/aleksrutins">on GitHub</a>.
+    ''), please_scroll
+)
+page_section(mmm, `<img src="mmm-logo.webp">',
+        section_heading(Manchester Machine Makers)
+        languages_bar(ManchesterMachineMakers, FreightFrenzy)
+        section_content(``
+            <p><i>2020-present</i></p>
+            <p>
+                The Manchester Machine Makers are a robotics club from Manchester, Vermont. I joined the team in
+                2020, and I am now the lead software developer. We currently use Java for the majority of our code,
+                but are
+                launching an initiative to migrate to Kotlin.
+            </p>
+            <p>See <a href="https://manchestermachinemakers.org">our website</a> and <a
+                    href="https://github.com/ManchesterMachineMakers">our GitHub profile</a>.</p>
+        ''),
+        please_scroll
+)
+page_section(harknology, `<img src="harknology.svg">',
+    section_heading(Harknology)
+    languages_bar(aleksrutins, harknology)
+    section_content(``
+        <p><i>2021-present</i></p>
+        <p>
+            Harknology is a work-in-progress application to help teachers and students manage and participate in
+            class discussions.<br>
+            It is written using <a href="https://nextjs.org">Next.js</a>, <a
+                href="https://prisma.io">Prisma</a>, <b>TypeScript</b>, and <b>PostgreSQL</b>, and hosted on <a
+                href="https://vercel.com">Vercel</a> and <a href="https://railway.app">Railway</a>.
+        </p>
+        <p>See it <a href="https://harknology.vercel.app">online</a> and <a
+                href="https://github.com/aleksrutins/harknology">on GitHub</a>.</p>
+    ''),
+    please_scroll
+)
+page_section_content_only(valapkg,
+    section_heading(Valapkg)
+    languages_bar(aleksrutins, valapkg)
+    section_content(``
+        <p><i>2021-present</i></p>
+        <p>
+            Valapkg is a dependency manager and build system for projects written in the <a
+                href="https://wiki.gnome.org/Projects/Vala">Vala</a> programming language.
+            It uses <a href="https://git-scm.org">Git</a> and <a href="https://github.com">GitHub</a> for
+            managing dependencies, and has IDE support through the <a
+                href="https://github.com/Prince781/vala-language-server">Vala Language Server</a> and the <a
+                href="https://clang.llvm.org/docs/JSONCompilationDatabase.html"><code>compile_commands.json</code></a>
+            standard.
+        </p>
+        <p>See it <a href="https://github.com/aleksrutins/valapkg">on GitHub</a>.</p>
+    ''),
+    please_scroll
+)
+page_section_content_only(contact,
+    section_heading(Contact Me)
+    section_content(
+                    <p>
+                        <img src="https://devicons.railway.app/i/github-light.svg" width="16">
+                        <a href="https://github.com/aleksrutins">aleksrutins</a>
+                    </p>
+                    <p>
+                        <img src="https://devicons.railway.app/i/gitlab.svg" width="16">
+                        <a href="https://gitlab.com/aleksrutins">aleksrutins</a>
+                    </p>
+                    <p>
+                        <img src="heroicon-mail.svg" width="16">
+                        <a data-replace-email>aleks@rutins.com</a>
+                    </p>
+    ),
+    ``
+    <div class="back-to-top slide slide-bottom">
+        <p class="arrow">&uarr;</p>
+        <p>Back to Top</p>
+    </div>
+    ''
+)
+pageend
