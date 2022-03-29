@@ -5,10 +5,10 @@ customElements.define('gh-language-bar', class extends HTMLElement {
     async connectedCallback() {
         const owner = this.getAttribute('owner');
         const repo = this.getAttribute('repo');
-        if(owner == null || repo == null) return;
+        if (owner == null || repo == null) return;
         const languages = await (await fetch(`https://langley-production.up.railway.app/${owner}/${repo}`)).json();
         const totalBytes = Object.values(languages).reduce((previous, current) => previous + current, 0);
-        for(let language in languages) {
+        for (let language in languages) {
             let el = document.createElement('div');
             el.classList.add('language', `language-${language.replace(' ', '_')}`);
             el.style.width = `${(languages[language] / totalBytes) * 100}%`;
@@ -31,3 +31,19 @@ document.querySelectorAll('.back-to-top').forEach(el => el.addEventListener('cli
         behavior: 'smooth'
     });
 }))
+
+function isVisible(el) {
+    return el.offsetTop + el.offsetHeight / 2 >= window.scrollY && el.offsetTop + el.offsetHeight / 2 <= window.scrollY + window.innerHeight;
+}
+function checkSlide() {
+    for (let el of document.querySelectorAll('section')) {
+        if (isVisible(el)) {
+            el.classList.add('sliding');
+        } else {
+            el.classList.remove('sliding');
+        }
+    }
+}
+
+window.addEventListener('scroll', checkSlide)
+checkSlide();
