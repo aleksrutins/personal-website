@@ -1,5 +1,3 @@
-import { request } from "https://cdn.skypack.dev/@octokit/request?dts";
-
 customElements.define('gh-language-bar', class extends HTMLElement {
     constructor() {
         super();
@@ -8,9 +6,7 @@ customElements.define('gh-language-bar', class extends HTMLElement {
         const owner = this.getAttribute('owner');
         const repo = this.getAttribute('repo');
         if(owner == null || repo == null) return;
-        const languages = (await request('GET /repos/{owner}/{repo}/languages', {
-            owner, repo
-        })).data;
+        const languages = await (await fetch(`https://langley-production.up.railway.app/${owner}/${repo}`)).json();
         const totalBytes = Object.values(languages).reduce((previous, current) => previous + current, 0);
         for(let language in languages) {
             let el = document.createElement('div');
