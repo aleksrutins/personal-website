@@ -140,9 +140,21 @@ gh-language-bar {
     height: 6px;
     border-radius: 3px;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.123);
 }
 .language {
-    height: 10px;
+    height: 6px;
+    animation: language-load 2.5s ease 0s 1;
+}
+@keyframes language-load {
+    0% {
+        transform: scaleX(0) translateX(-50%);
+        border-radius: 3px;
+    }
+    100% {
+        transform: scaleX(1) translateX(0);
+        border-radius: 0;
+    }
 }
 .language-TypeScript {
     background-color: #2A7389
