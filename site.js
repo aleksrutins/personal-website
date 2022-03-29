@@ -45,5 +45,9 @@ function checkSlide() {
     }
 }
 
+for(let link of document.querySelectorAll('[data-replace-email]')) {
+    link.setAttribute('href', 'mailto:' + link.textContent);
+}
+
 window.addEventListener('scroll', checkSlide)
 checkSlide();
