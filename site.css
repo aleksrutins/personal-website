@@ -126,6 +126,11 @@ section#valapkg {
     --section-fg: black;
     --link-color: #a56de2;
 }
+section#litelytics {
+    --section-bg: white;
+    --section-fg: black;
+    --link-color: #3B8070;
+}
 section#contact {
     --section-bg: black;
     --section-fg: white;
@@ -189,6 +194,12 @@ gh-language-bar {
 }
 .language-Meson {
     background-color: #007800;
+}
+.language-HTML {
+    background-color: #E34C26;
+}
+.language-Dockerfile {
+    background-color: #384D54;
 }
 
 @media screen and (max-width: 720px) {
