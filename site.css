@@ -127,9 +127,9 @@ section#valapkg {
     --link-color: #a56de2;
 }
 section#litelytics {
-    --section-bg: white;
+    --section-bg: #EDD180;
     --section-fg: black;
-    --link-color: #3B8070;
+    --link-color: #DC7E1F;
 }
 section#contact {
     --section-bg: black;
@@ -200,6 +200,12 @@ gh-language-bar {
 }
 .language-Dockerfile {
     background-color: #384D54;
+}
+.language-Rust {
+    background-color: #DEA584;
+}
+.language-PLpgSQL {
+    background-color: #336790;
 }
 
 @media screen and (max-width: 720px) {
