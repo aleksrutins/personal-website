@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+@import url('https://fonts.bunny.net/css2?family=Montserrat:wght@300;600&display=swap');
 html, body, section {
     height: 100vh;
     width: 100vw;
@@ -206,6 +206,9 @@ gh-language-bar {
 }
 .language-PLpgSQL {
     background-color: #336790;
+}
+.language-C\+\+ {
+    background-color: #f34b7d;
 }
 
 @media screen and (max-width: 720px) {
