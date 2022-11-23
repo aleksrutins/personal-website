@@ -210,6 +210,9 @@ gh-language-bar {
 .language-C\+\+ {
     background-color: #f34b7d;
 }
+.language-Go {
+    background-color: #00ADD8;
+}
 
 @media screen and (max-width: 720px) {
     section .content {
