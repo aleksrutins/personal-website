@@ -213,6 +213,9 @@ gh-language-bar {
 .language-Go {
     background-color: #00ADD8;
 }
+.language-Vue {
+    background-color: #41b883;
+}
 
 @media screen and (max-width: 720px) {
     section .content {
