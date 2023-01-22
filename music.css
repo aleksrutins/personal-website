@@ -1,0 +1,19 @@
+@import url(site.css);
+@import url(https://fonts.bunny.net/css?family=aguafina-script:400);
+
+html, body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+section#jumbotron {
+    --section-bg: rgb(255, 237, 210);
+    --link-color: rgb(182, 89, 13);
+}
+
+h1 {
+    font-family: 'Aguafina Script', handwriting;
+}
+
+#alltheotherstuff {
+    padding: 20px;
+}
