@@ -1,3 +1,36 @@
+<!doctype html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="/assets/site.css" rel="stylesheet">
+    <link href="profile.png" rel="shortcut icon">
+    <script src="https://litelytics-production.up.railway.app/simpleclient.js" type="module"></script>
+    <title>Aleks Rūtiņš</title>
+</head>
+
+<body>
+    <slot><html><p>
+<page-section header="Hello. I'm Aleks Rūtiņš." id="hello" img-url="/assets/profile.png"><template shadowroot="open"><html><section>
+    <div class="content">
+        <div class="column-left slide slide-left">
+            <img [src]="img-url" src="/assets/profile.png">
+        </div>
+        <div class="column-right">
+            <h1 class="slide slide-top">
+                Hello. I'm Aleks Rūtiņš.
+            </h1>
+            <p class="slide slide-bottom">
+                <slot></slot>
+            </p>
+        </div>
+    </div>
+    <div class="please-scroll slide slide-bottom">
+        <p>Scroll</p>
+        <p class="arrow">↧</p>
+    </div>
+</section>
+
+<style>
 @import url('https://fonts.bunny.net/css2?family=Montserrat:wght@300;600&display=swap');
 html, body, section {
     height: 100vh;
@@ -6,34 +39,7 @@ html, body, section {
     padding: 0;
 }
 
-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--section-bg);
-    color: var(--section-fg);
-    scroll-snap-align: start;
-    position: relative;
-}
-section .content {
-    max-width: 80vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    overflow: auto;
-    height: 100%;
-}
-section .column-left {
-    padding-right: 10px;
-}
-section .column-left img {
-    height: 128px;
-}
-section .column-right {
-    padding-left: 20px;
-}
+
 
 div.please-scroll, div.back-to-top {
     position: absolute;
@@ -138,84 +144,7 @@ section#contact {
 }
 
 
-gh-language-bar {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    height: 6px;
-    border-radius: 3px;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.123);
-}
-.sliding gh-language-bar {
-    animation: language-load 2.5s ease 0s 1;
-}
-.language {
-    height: 6px;
-}
-.sliding .language {
-    animation: language-load 2.5s ease 0s 1;
-}
-@keyframes language-load {
-    0% {
-        transform: scaleX(0) translateX(-50%);
-    }
-    100% {
-        transform: scaleX(1) translateX(0);
-    }
-}
-.language-TypeScript {
-    background-color: #3178C6;
-}
-.language-CSS {
-    background-color: #563D7C;
-}
-.language-JavaScript {
-    background-color: #F1E059;
-}
-.language-Java {
-    background-color: #b07219;
-}
-.language-Kotlin {
-    background-color: #A97BFF;
-}
-.language-Shell {
-    background-color: #89e051;
-}
-.language-Makefile {
-    background-color: #427819;
-}
-.language-Vala {
-    background-color: #a56de2;
-}
-.language-C {
-    background-color: #555555;
-}
-.language-Meson {
-    background-color: #007800;
-}
-.language-HTML {
-    background-color: #E34C26;
-}
-.language-Dockerfile {
-    background-color: #384D54;
-}
-.language-Rust {
-    background-color: #DEA584;
-}
-.language-PLpgSQL {
-    background-color: #336790;
-}
-.language-C\+\+ {
-    background-color: #f34b7d;
-}
-.language-Go {
-    background-color: #00ADD8;
-}
-.language-Vue {
-    background-color: #41b883;
-}
+
 
 @media screen and (max-width: 720px) {
     section .content {
@@ -316,3 +245,8 @@ section#contact img {
         transform: translateY(0);
     }
 }
+
+</style></html></template></page-section></p>
+</html></slot>
+
+</body></html>

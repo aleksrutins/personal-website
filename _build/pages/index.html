@@ -1,0 +1,916 @@
+<!doctype html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="/assets/site.css" rel="stylesheet">
+    <link href="profile.png" rel="shortcut icon">
+    <script src="https://litelytics-production.up.railway.app/simpleclient.js" type="module"></script>
+    <title>Aleks Rūtiņš</title>
+</head>
+
+<body>
+    <slot><html><p>
+<page-section header="Hello. I'm Aleks Rūtiņš." id="hello" img-url="/assets/profile.png">
+I am a student who likes to code.<br>
+I have experience with <b>C</b>, <b>JavaScript</b>, <b>TypeScript</b>, <b>HTML</b>, <b>CSS</b>,
+<b>Go</b>, <b>Rust</b>,
+<b>Java</b>, <b>Kotlin</b>, <b>C++</b>, and other programming languages.<br>
+Below are a few of my endeavours.<br>
+You can see others <a href="https://github.com/aleksrutins">on GitHub</a>.
+<template shadowroot="open"><html><section>
+    <div class="content">
+        <div class="column-left slide slide-left">
+            <img [src]="img-url" src="/assets/profile.png">
+        </div>
+        <div class="column-right">
+            <h1 class="slide slide-top">
+                Hello. I'm Aleks Rūtiņš.
+            </h1>
+            <p class="slide slide-bottom">
+                <slot></slot>
+            </p>
+        </div>
+    </div>
+    <div class="please-scroll slide slide-bottom">
+        <p>Scroll</p>
+        <p class="arrow">↧</p>
+    </div>
+</section>
+
+<style>
+@import url('https://fonts.bunny.net/css2?family=Montserrat:wght@300;600&display=swap');
+html, body, section {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+div.please-scroll, div.back-to-top {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: medium;
+    cursor: pointer;
+}
+.please-scroll .arrow {
+    font-size: xx-large;
+    margin-top: -10px;
+    animation: please-scroll 1.5s ease 0s infinite;
+}
+
+.back-to-top .arrow {
+    font-size: xx-large;
+    margin-bottom: -10px;
+    animation: back-to-top 1.5s ease 0s infinite;
+}
+
+@keyframes please-scroll {
+    0% {
+        transform: scaleY(1) translateY(0);
+    }
+    50% {
+        transform: scaleY(1.2) translateY(5px);
+    }
+    100% {
+        transform: scaleY(1) translateY(0);
+    }
+}
+@keyframes back-to-top {
+    0% {
+        transform: scaleY(1) translateY(0);
+    }
+    50% {
+        transform: scaleY(1.2) translateY(-5px);
+    }
+    100% {
+        transform: scaleY(1) translateY(0);
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --link-color: rgb(0, 195, 255);
+    scroll-snap-type: y mandatory;
+}
+
+h1 {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: 2em;
+}
+
+a {
+    color: var(--link-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: .2s;
+    border-bottom: 0px solid var(--section-bg);
+}
+a:hover {
+    border-bottom: 2px solid var(--link-color);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+section#hello {
+    --section-bg: black;
+    --section-fg: white;
+}
+
+section#mmm {
+    --section-bg: #353D49;
+    --section-fg: white;
+    --link-color: #F15923;
+}
+section#harknology {
+    --section-bg: #037022;
+    --section-fg: white;
+    --link-color: #79FC9E;
+}
+section#valapkg {
+    --section-bg: #F5E5D0;
+    --section-fg: black;
+    --link-color: #a56de2;
+}
+section#litelytics {
+    --section-bg: #EDD180;
+    --section-fg: black;
+    --link-color: #DC7E1F;
+}
+section#contact {
+    --section-bg: black;
+    --section-fg: white;
+    text-align: center;
+}
+
+
+
+
+@media screen and (max-width: 720px) {
+    section .content {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    section {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    div.please-scroll {
+        position: unset;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    section .column-left img {
+        width: 70%;
+        height: unset;
+        text-align: center;
+        display: block;
+    }
+    section .column-left {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+img {
+    vertical-align: middle;
+}
+
+section#contact img {
+    padding-right: 5px;
+}
+
+.slide {
+    display: none;
+}
+
+.sliding .slide {
+    display: block;
+    animation: var(--slide-type) 1.2s ease 0s 1;
+}
+
+.slide-left {
+    --slide-type: slide-left;
+}
+.slide-right {
+    --slide-type: slide-right;
+}
+.slide-top {
+    --slide-type: slide-top;
+}
+.slide-bottom {
+    --slide-type: slide-bottom;
+}
+
+@keyframes slide-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide-right {
+    0% {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slide-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style></html></template></page-section>
+<page-section header="Manchester Machine Makers" id="mmm" img-url="/assets/mmm-logo.webp">
+<gh-language-bar owner="ManchesterMachineMakers" repo="FreightFrenzy"><template shadowroot="open"><html><script></script>
+
+<style>
+:host {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.123);
+    animation: language-load 2.5s ease 0s 1;
+}
+.language {
+    height: 6px;
+    animation: language-load 2.5s ease 0s 1;
+}
+@keyframes language-load {
+    0% {
+        transform: scaleX(0) translateX(-50%);
+    }
+    100% {
+        transform: scaleX(1) translateX(0);
+    }
+}
+.language-TypeScript {
+    background-color: #3178C6;
+}
+.language-CSS {
+    background-color: #563D7C;
+}
+.language-JavaScript {
+    background-color: #F1E059;
+}
+.language-Java {
+    background-color: #b07219;
+}
+.language-Kotlin {
+    background-color: #A97BFF;
+}
+.language-Shell {
+    background-color: #89e051;
+}
+.language-Makefile {
+    background-color: #427819;
+}
+.language-Vala {
+    background-color: #a56de2;
+}
+.language-C {
+    background-color: #555555;
+}
+.language-Meson {
+    background-color: #007800;
+}
+.language-HTML {
+    background-color: #E34C26;
+}
+.language-Dockerfile {
+    background-color: #384D54;
+}
+.language-Rust {
+    background-color: #DEA584;
+}
+.language-PLpgSQL {
+    background-color: #336790;
+}
+.language-C\+\+ {
+    background-color: #f34b7d;
+}
+.language-Go {
+    background-color: #00ADD8;
+}
+.language-Vue {
+    background-color: #41b883;
+}
+</style></html></template></gh-language-bar>
+<template shadowroot="open"><html><section>
+    <div class="content">
+        <div class="column-left slide slide-left">
+            <img [src]="img-url" src="/assets/mmm-logo.webp">
+        </div>
+        <div class="column-right">
+            <h1 class="slide slide-top">
+                Manchester Machine Makers
+            </h1>
+            <p class="slide slide-bottom">
+                <slot></slot>
+            </p>
+        </div>
+    </div>
+    <div class="please-scroll slide slide-bottom">
+        <p>Scroll</p>
+        <p class="arrow">↧</p>
+    </div>
+</section>
+
+<style>
+@import url('https://fonts.bunny.net/css2?family=Montserrat:wght@300;600&display=swap');
+html, body, section {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+div.please-scroll, div.back-to-top {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: medium;
+    cursor: pointer;
+}
+.please-scroll .arrow {
+    font-size: xx-large;
+    margin-top: -10px;
+    animation: please-scroll 1.5s ease 0s infinite;
+}
+
+.back-to-top .arrow {
+    font-size: xx-large;
+    margin-bottom: -10px;
+    animation: back-to-top 1.5s ease 0s infinite;
+}
+
+@keyframes please-scroll {
+    0% {
+        transform: scaleY(1) translateY(0);
+    }
+    50% {
+        transform: scaleY(1.2) translateY(5px);
+    }
+    100% {
+        transform: scaleY(1) translateY(0);
+    }
+}
+@keyframes back-to-top {
+    0% {
+        transform: scaleY(1) translateY(0);
+    }
+    50% {
+        transform: scaleY(1.2) translateY(-5px);
+    }
+    100% {
+        transform: scaleY(1) translateY(0);
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --link-color: rgb(0, 195, 255);
+    scroll-snap-type: y mandatory;
+}
+
+h1 {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: 2em;
+}
+
+a {
+    color: var(--link-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: .2s;
+    border-bottom: 0px solid var(--section-bg);
+}
+a:hover {
+    border-bottom: 2px solid var(--link-color);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+section#hello {
+    --section-bg: black;
+    --section-fg: white;
+}
+
+section#mmm {
+    --section-bg: #353D49;
+    --section-fg: white;
+    --link-color: #F15923;
+}
+section#harknology {
+    --section-bg: #037022;
+    --section-fg: white;
+    --link-color: #79FC9E;
+}
+section#valapkg {
+    --section-bg: #F5E5D0;
+    --section-fg: black;
+    --link-color: #a56de2;
+}
+section#litelytics {
+    --section-bg: #EDD180;
+    --section-fg: black;
+    --link-color: #DC7E1F;
+}
+section#contact {
+    --section-bg: black;
+    --section-fg: white;
+    text-align: center;
+}
+
+
+
+
+@media screen and (max-width: 720px) {
+    section .content {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    section {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    div.please-scroll {
+        position: unset;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    section .column-left img {
+        width: 70%;
+        height: unset;
+        text-align: center;
+        display: block;
+    }
+    section .column-left {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+img {
+    vertical-align: middle;
+}
+
+section#contact img {
+    padding-right: 5px;
+}
+
+.slide {
+    display: none;
+}
+
+.sliding .slide {
+    display: block;
+    animation: var(--slide-type) 1.2s ease 0s 1;
+}
+
+.slide-left {
+    --slide-type: slide-left;
+}
+.slide-right {
+    --slide-type: slide-right;
+}
+.slide-top {
+    --slide-type: slide-top;
+}
+.slide-bottom {
+    --slide-type: slide-bottom;
+}
+
+@keyframes slide-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide-right {
+    0% {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slide-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style></html></template></page-section></p><p class="slide slide-bottom"><i>2020-present</i></p>
+<p class="slide slide-bottom">
+The Manchester Machine Makers are a robotics club from Manchester, Vermont. I joined the team in
+2020, and I am now the lead software developer. We currently use Java for the majority of our code,
+but are
+launching an initiative to migrate to Kotlin.
+</p>
+<p class="slide slide-bottom">See <a href="https://manchestermachinemakers.org">our website</a> and <a href="https://github.com/ManchesterMachineMakers">our GitHub profile</a>.</p>
+<p></p>
+<section id="mmm">
+    <div class="content">
+        <div class="column-left slide slide-left">
+            <img src="mmm-logo.webp">
+        </div>
+        <div class="column-right">
+            <h1 class="slide slide-top">Manchester Machine Makers</h1>
+<pre><code>    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="please-scroll slide slide-bottom"&gt;
+    &lt;p&gt;Scroll&lt;/p&gt;
+    &lt;p class="arrow"&gt;&amp;#8615;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+</div></div></section>
+<section id="harknology">
+    <div class="content">
+        <div class="column-left slide slide-left">
+            <img src="harknology.svg">
+        </div>
+        <div class="column-right">
+            <h1 class="slide slide-top">Harknology</h1>
+            <gh-language-bar owner="aleksrutins" repo="harknology"><template shadowroot="open"><html><script></script>
+
+<style>
+:host {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.123);
+    animation: language-load 2.5s ease 0s 1;
+}
+.language {
+    height: 6px;
+    animation: language-load 2.5s ease 0s 1;
+}
+@keyframes language-load {
+    0% {
+        transform: scaleX(0) translateX(-50%);
+    }
+    100% {
+        transform: scaleX(1) translateX(0);
+    }
+}
+.language-TypeScript {
+    background-color: #3178C6;
+}
+.language-CSS {
+    background-color: #563D7C;
+}
+.language-JavaScript {
+    background-color: #F1E059;
+}
+.language-Java {
+    background-color: #b07219;
+}
+.language-Kotlin {
+    background-color: #A97BFF;
+}
+.language-Shell {
+    background-color: #89e051;
+}
+.language-Makefile {
+    background-color: #427819;
+}
+.language-Vala {
+    background-color: #a56de2;
+}
+.language-C {
+    background-color: #555555;
+}
+.language-Meson {
+    background-color: #007800;
+}
+.language-HTML {
+    background-color: #E34C26;
+}
+.language-Dockerfile {
+    background-color: #384D54;
+}
+.language-Rust {
+    background-color: #DEA584;
+}
+.language-PLpgSQL {
+    background-color: #336790;
+}
+.language-C\+\+ {
+    background-color: #f34b7d;
+}
+.language-Go {
+    background-color: #00ADD8;
+}
+.language-Vue {
+    background-color: #41b883;
+}
+</style></html></template></gh-language-bar>
+            <p class="slide slide-bottom"><i>2021-present</i></p>
+            <p class="slide slide-bottom">
+                Harknology is a work-in-progress application to help teachers and students manage and participate in
+                class discussions.<br>
+                It is written using <a href="https://nextjs.org">Next.js</a>, <a href="https://prisma.io">Prisma</a>, <b>TypeScript</b>, and <b>PostgreSQL</b>, and hosted on <a href="https://vercel.com">Vercel</a> and <a href="https://railway.app">Railway</a>.
+            </p>
+            <p class="slide slide-bottom">See it <a href="https://harknology.vercel.app">online</a> and <a href="https://github.com/aleksrutins/harknology">on GitHub</a>.</p>
+        </div>
+    </div>
+    <div class="please-scroll slide slide-bottom">
+        <p>Scroll</p>
+        <p class="arrow">↧</p>
+    </div>
+</section>
+<section id="valapkg">
+    <div class="content">
+        <div>
+            <h1 class="slide slide-top">Valapkg</h1>
+            <gh-language-bar owner="aleksrutins" repo="valapkg"><template shadowroot="open"><html><script></script>
+
+<style>
+:host {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.123);
+    animation: language-load 2.5s ease 0s 1;
+}
+.language {
+    height: 6px;
+    animation: language-load 2.5s ease 0s 1;
+}
+@keyframes language-load {
+    0% {
+        transform: scaleX(0) translateX(-50%);
+    }
+    100% {
+        transform: scaleX(1) translateX(0);
+    }
+}
+.language-TypeScript {
+    background-color: #3178C6;
+}
+.language-CSS {
+    background-color: #563D7C;
+}
+.language-JavaScript {
+    background-color: #F1E059;
+}
+.language-Java {
+    background-color: #b07219;
+}
+.language-Kotlin {
+    background-color: #A97BFF;
+}
+.language-Shell {
+    background-color: #89e051;
+}
+.language-Makefile {
+    background-color: #427819;
+}
+.language-Vala {
+    background-color: #a56de2;
+}
+.language-C {
+    background-color: #555555;
+}
+.language-Meson {
+    background-color: #007800;
+}
+.language-HTML {
+    background-color: #E34C26;
+}
+.language-Dockerfile {
+    background-color: #384D54;
+}
+.language-Rust {
+    background-color: #DEA584;
+}
+.language-PLpgSQL {
+    background-color: #336790;
+}
+.language-C\+\+ {
+    background-color: #f34b7d;
+}
+.language-Go {
+    background-color: #00ADD8;
+}
+.language-Vue {
+    background-color: #41b883;
+}
+</style></html></template></gh-language-bar>
+            <p class="slide slide-bottom"><i>2021-present</i></p>
+            <p class="slide slide-bottom">
+                Valapkg is a dependency manager and build system for projects written in the <a href="https://wiki.gnome.org/Projects/Vala">Vala</a> programming language.
+                It uses <a href="https://git-scm.org">Git</a> and <a href="https://github.com">GitHub</a> for
+                managing dependencies, and has IDE support through the <a href="https://github.com/Prince781/vala-language-server">Vala Language Server</a> and the <a href="https://clang.llvm.org/docs/JSONCompilationDatabase.html"><code>compile_commands.json</code></a>
+                standard.
+            </p>
+            <p class="slide slide-bottom">See it <a href="https://github.com/aleksrutins/valapkg">on GitHub</a>.</p>
+        </div>
+    </div>
+    <div class="please-scroll slide slide-bottom">
+        <p>Scroll</p>
+        <p class="arrow">↧</p>
+    </div>
+</section>
+<section id="litelytics">
+    <div class="content">
+        <div class="column-left slide slide-left">
+            <img src="litelytics-logo-black.webp">
+        </div>
+        <div class="column-right">
+            <h1 class="slide slide-top">Litelytics</h1>
+            <gh-language-bar owner="aleksrutins" repo="litelytics"><template shadowroot="open"><html><script></script>
+
+<style>
+:host {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.123);
+    animation: language-load 2.5s ease 0s 1;
+}
+.language {
+    height: 6px;
+    animation: language-load 2.5s ease 0s 1;
+}
+@keyframes language-load {
+    0% {
+        transform: scaleX(0) translateX(-50%);
+    }
+    100% {
+        transform: scaleX(1) translateX(0);
+    }
+}
+.language-TypeScript {
+    background-color: #3178C6;
+}
+.language-CSS {
+    background-color: #563D7C;
+}
+.language-JavaScript {
+    background-color: #F1E059;
+}
+.language-Java {
+    background-color: #b07219;
+}
+.language-Kotlin {
+    background-color: #A97BFF;
+}
+.language-Shell {
+    background-color: #89e051;
+}
+.language-Makefile {
+    background-color: #427819;
+}
+.language-Vala {
+    background-color: #a56de2;
+}
+.language-C {
+    background-color: #555555;
+}
+.language-Meson {
+    background-color: #007800;
+}
+.language-HTML {
+    background-color: #E34C26;
+}
+.language-Dockerfile {
+    background-color: #384D54;
+}
+.language-Rust {
+    background-color: #DEA584;
+}
+.language-PLpgSQL {
+    background-color: #336790;
+}
+.language-C\+\+ {
+    background-color: #f34b7d;
+}
+.language-Go {
+    background-color: #00ADD8;
+}
+.language-Vue {
+    background-color: #41b883;
+}
+</style></html></template></gh-language-bar>
+            <p class="slide slide-bottom"><i>2021-present</i></p>
+            <p class="slide slide-bottom">
+                Litelytics is a lightweight, fast, privacy-respecting analytics platform written in Go. It was previously written in JavaScript, but a rewrite is on the way.
+            </p>
+            <p class="slide slide-bottom">See it <a href="https://github.com/aleksrutins/litelytics">on GitHub</a>.</p>
+        </div>
+    </div>
+    <div class="please-scroll slide slide-bottom">
+        <p>Scroll</p>
+        <p class="arrow">↧</p>
+    </div>
+</section>
+<section id="contact">
+    <div class="content">
+        <div>
+            <h1 class="slide slide-top">Contact Me</h1>
+            <div class="slide slide-bottom">
+                <p>
+                    <img src="https://devicons.railway.app/i/github-light.svg" width="16">
+                    <a href="https://github.com/aleksrutins">aleksrutins</a>
+                </p>
+                <p>
+                    <img src="https://devicons.railway.app/i/gitlab.svg" width="16">
+                    <a href="https://gitlab.com/aleksrutins">aleksrutins</a>
+                </p>
+                <p>
+                    <img src="heroicon-mail.svg" width="16">
+                    <a data-replace-email="">aleks@rutins.com</a>
+                </p>
+                <p><a href="/music.html">Music</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="back-to-top slide slide-bottom">
+        <p class="arrow">↥</p>
+        <p>Back to Top</p>
+    </div>
+</section></html></slot>
+
+<script src="/_scripts/gh-language-bar.registrar.js" type="module"></script></body></html>
